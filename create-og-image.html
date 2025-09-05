@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오픈그래프 이미지 생성기</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        #canvas-container {
+            margin-bottom: 20px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            display: block;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #c0152f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #a01229;
+        }
+    </style>
+</head>
+<body>
+    <h1>피트니스055 오픈그래프 이미지 생성기</h1>
+    <div id="canvas-container">
+        <canvas id="ogCanvas" width="1200" height="630"></canvas>
+    </div>
+    <button onclick="createImage()">이미지 생성</button>
+    <button onclick="downloadImage()">다운로드</button>
+
+    <script>
+        const canvas = document.getElementById('ogCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function createImage() {
+            // 배경 그라데이션
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, '#1a1a1a');
+            gradient.addColorStop(1, '#2d2d2d');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+
+            // 빨간 액센트 라인
+            ctx.fillStyle = '#c0152f';
+            ctx.fillRect(0, 0, 1200, 8);
+            ctx.fillRect(0, 622, 1200, 8);
+
+            // 메인 텍스트
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 72px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('피트니스055', 600, 200);
+
+            // 서브 텍스트
+            ctx.font = 'bold 48px Arial, sans-serif';
+            ctx.fillStyle = '#c0152f';
+            ctx.fillText('창원 용호점', 600, 280);
+
+            // 설명 텍스트
+            ctx.font = '36px Arial, sans-serif';
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText('365일 24시간 프리미엄 헬스장', 600, 360);
+
+            // 특징들
+            ctx.font = '28px Arial, sans-serif';
+            ctx.fillStyle = '#cccccc';
+            ctx.fillText('전지점 통합이용 • 1:1 PT 전문 • 넓은 프리웨이트존', 600, 420);
+
+            // 하단 텍스트
+            ctx.font = 'bold 32px Arial, sans-serif';
+            ctx.fillStyle = '#c0152f';
+            ctx.fillText('지금 무료체험 신청하세요!', 600, 520);
+
+            // 장식 요소들
+            ctx.strokeStyle = '#c0152f';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(200, 480);
+            ctx.lineTo(1000, 480);
+            ctx.stroke();
+
+            // 사이드 장식
+            ctx.fillStyle = '#c0152f';
+            ctx.fillRect(50, 150, 6, 300);
+            ctx.fillRect(1144, 150, 6, 300);
+        }
+
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'og-image-fitness055.jpg';
+            canvas.toBlob(function(blob) {
+                link.href = URL.createObjectURL(blob);
+                link.click();
+            }, 'image/jpeg', 0.9);
+        }
+
+        // 페이지 로드 시 자동으로 이미지 생성
+        window.onload = function() {
+            createImage();
+        };
+    </script>
+</body>
+</html>

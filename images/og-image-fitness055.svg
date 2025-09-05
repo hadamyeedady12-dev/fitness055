@@ -1,0 +1,40 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 그라데이션 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#2d2d2d"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- 상단 빨간 라인 -->
+  <rect x="0" y="0" width="1200" height="8" fill="#c0152f"/>
+  
+  <!-- 하단 빨간 라인 -->
+  <rect x="0" y="622" width="1200" height="8" fill="#c0152f"/>
+  
+  <!-- 사이드 장식 -->
+  <rect x="50" y="150" width="6" height="300" fill="#c0152f"/>
+  <rect x="1144" y="150" width="6" height="300" fill="#c0152f"/>
+  
+  <!-- 메인 텍스트 -->
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">피트니스055</text>
+  
+  <!-- 서브 텍스트 -->
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#c0152f" text-anchor="middle">창원 용호점</text>
+  
+  <!-- 설명 텍스트 -->
+  <text x="600" y="360" font-family="Arial, sans-serif" font-size="36" fill="white" text-anchor="middle">365일 24시간 프리미엄 헬스장</text>
+  
+  <!-- 특징 -->
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="28" fill="#cccccc" text-anchor="middle">전지점 통합이용 • 1:1 PT 전문 • 넓은 프리웨이트존</text>
+  
+  <!-- 장식 라인 -->
+  <line x1="200" y1="480" x2="1000" y2="480" stroke="#c0152f" stroke-width="4"/>
+  
+  <!-- 하단 텍스트 -->
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#c0152f" text-anchor="middle">지금 무료체험 신청하세요!</text>
+</svg>
