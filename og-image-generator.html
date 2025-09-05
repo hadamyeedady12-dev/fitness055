@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피트니스055 창원 용호점 - 오픈그래프 이미지 생성기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .og-image {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #c0152f 0%, #134252 100%);
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .og-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .og-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(192, 21, 47, 0.85) 0%, 
+                rgba(19, 66, 82, 0.85) 100%);
+            z-index: 2;
+        }
+
+        .content {
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 60px;
+        }
+
+        .logo {
+            font-size: 52px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 16px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .title {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .subtitle {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .features {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .feature {
+            font-size: 18px;
+            font-weight: 600;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .cta {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffed4e;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .gym-icon {
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.1;
+            color: white;
+        }
+
+        .gym-icon:nth-child(1) {
+            top: 50px;
+            right: 80px;
+            transform: rotate(15deg);
+        }
+
+        .gym-icon:nth-child(2) {
+            bottom: 60px;
+            left: 60px;
+            transform: rotate(-10deg);
+        }
+
+        .gym-icon:nth-child(3) {
+            top: 80px;
+            left: 120px;
+            transform: rotate(25deg);
+        }
+
+        /* 미리보기용 스타일 */
+        .preview-info {
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #c0152f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #a01327;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="og-image" id="ogImage">
+            <div class="decorative-elements">
+                <div class="gym-icon">🏋️</div>
+                <div class="gym-icon">💪</div>
+                <div class="gym-icon">⚡</div>
+            </div>
+            <div class="content">
+                <div class="logo">FITNESS055</div>
+                <h1 class="title">창원 용호점</h1>
+                <p class="subtitle">365일 24시간 프리미엄 헬스장</p>
+                <div class="features">
+                    <span class="feature">전지점 통합이용</span>
+                    <span class="feature">1:1 PT 전문</span>
+                    <span class="feature">창원로타리뷰</span>
+                </div>
+                <div class="cta">무료 체험 신청하기</div>
+            </div>
+        </div>
+        
+        <div class="preview-info">
+            <p><strong>오픈그래프 이미지 미리보기</strong> (1200x630px)</p>
+            <p>페이스북, 카카오톡, 인스타그램 등 소셜 미디어 공유 시 표시됩니다</p>
+            <button class="download-btn" onclick="downloadImage()">이미지 다운로드</button>
+            <p style="margin-top: 10px; font-size: 14px; color: #999;">
+                스크린샷 도구를 사용하거나 개발자 도구에서 HTML을 이미지로 변환하세요
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function downloadImage() {
+            alert('브라우저의 스크린샷 기능을 사용하거나, 개발자 도구에서 해당 div를 우클릭하여 "스크린샷 캡처"를 선택하세요.\n\n또는 온라인 HTML-to-Image 변환기를 사용할 수 있습니다:\n- htmlcsstoimage.com\n- html2canvas 라이브러리');
+        }
+
+        // 페이지 로드 시 정확한 크기 확인
+        window.addEventListener('load', function() {
+            const ogImage = document.getElementById('ogImage');
+            const rect = ogImage.getBoundingClientRect();
+            console.log('OG Image 크기:', rect.width + 'x' + rect.height);
+        });
+    </script>
+</body>
+</html>
