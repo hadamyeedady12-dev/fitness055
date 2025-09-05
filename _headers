@@ -1,0 +1,35 @@
+/*
+  # 보안 헤더
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # CSP (Content Security Policy)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://r2cdn.perplexity.ai; font-src 'self' https://fonts.gstatic.com https://r2cdn.perplexity.ai; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none';
+
+# CSS 파일 캐싱
+/*.css
+  Cache-Control: public, max-age=31536000
+
+# JS 파일 캐싱  
+/*.js
+  Cache-Control: public, max-age=31536000
+
+# 이미지 파일 캐싱
+/*.jpg
+  Cache-Control: public, max-age=31536000
+
+/*.png
+  Cache-Control: public, max-age=31536000
+
+/*.webp
+  Cache-Control: public, max-age=31536000
+
+# HTML 파일 (짧은 캐싱)
+/*.html
+  Cache-Control: public, max-age=3600
+
+# 폰트 파일 캐싱
+/*.woff2
+  Cache-Control: public, max-age=31536000

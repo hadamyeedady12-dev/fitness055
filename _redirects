@@ -1,0 +1,34 @@
+# SPA 라우팅 (현재는 단일 페이지이므로 기본 설정)
+/*    /index.html   200
+
+# 일반적인 리디렉션 (필요시)
+/home     /
+/main     /
+/헬스장    /
+
+# 전화번호 단축 URL
+/call     tel:010-9780-4928
+/phone    tel:010-9780-4928
+/전화      tel:010-9780-4928
+
+# 인스타그램 단축 URL  
+/instagram  https://instagram.com/fitness055_yongho  302
+/insta      https://instagram.com/fitness055_yongho  302
+
+# 체험신청 단축 URL (모달로 열림)
+/trial    /#hero
+/체험      /#hero
+/무료체험   /#hero
+
+# 섹션 단축 URL
+/요금제    /#membership
+/시설      /#facilities
+/특징      /#features
+/위치      /#location
+/후기      /#reviews
+/faq      /#faq
+/상담      /#contact
+
+# 이미지 최적화 (WebP 지원 브라우저용)
+/*.jpg  *.webp  200
+/*.png  *.webp  200
